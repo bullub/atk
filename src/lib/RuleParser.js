@@ -60,10 +60,10 @@ function resolveRule(rule, rules, cmdName, showError) {
                 let _rule = rules[cmd.value[j]];
 
                 if (!_rule) {
-                    //TODO: 没找到规则
+                    //没找到规则
                     showError(`Directive parse error, rule \x1B[34m${cmd.value[j]}\x1B[31m not found, please check your rules!`)
                 } else if (!(_rule instanceof Array)) {
-                    //TODO: 规则必须是一个数组，规则格式不对
+                    //规则必须是一个数组，规则格式不对
                     showError(`Directive parse error, rule \x1B[34m${cmd.value[j]}\x1B[31m's value must be an array, please check your rules!`)
                 } else {
                     cmdList = cmdList.concat(resolveRule(rules[cmd.value[j]], rules, cmdName));
