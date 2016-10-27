@@ -1,0 +1,21 @@
+{
+  "name": "example",
+  "description": "",
+  "main": "example.js",
+  "authors": [
+    "bullub <123572970@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bullub/atk",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "underscore": "^1.8.3"
+  }
+}

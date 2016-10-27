@@ -1,0 +1,28 @@
+{
+  "name": "atk",
+  "version": "0.0.1",
+  "description": "TIDT的增强版，基于原TIDT开发",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --harmony",
+    "test-cov": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot",
+    "test-travis": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot"
+  },
+  "repository": "bullub/atk",
+  "author": "bullub",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "istanbul-harmony": "0",
+    "mocha": "^2.0.0",
+    "mz": "^1.0.2"
+  },
+  "engines": {
+    "node": ">= 7.0.0"
+  },
+  "dependencies": {
+    "vinyl": "^0.5.3"
+  }
+}
