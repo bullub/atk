@@ -25,7 +25,7 @@ class DirectiveResolver {
 
         //为包含目录默认添加当前项目源码根路径
         for(let key in opts.includePaths) {
-            opts.includePaths[key].unshift("");
+            opts.includePaths[key].push(".");
         }
 
         //在解析bower和npm指令时，可能会涉及到新增文件(将npm或者bower中被引用到的文件拷贝到目标位置，该列表中保存了被拷贝和新增的文件的vinly对象)
