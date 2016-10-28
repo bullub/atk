@@ -7,6 +7,7 @@
 const defaultOptions =  require("../configs");
 const ObjectUtils = require("../utils/ObjectUtils");
 const AtkUtils = require("../utils/AtkUtils");
+const PathVariableInjector = require("./PathVariableInjector");
 
 const DIRECTIVE_BEFORE = `<!--\\s*`;
 const DIRECTIVE_END = `\\s+([^'"]*)\\s*=\\s*"?([^'"]*)"?\\s*-->`;
@@ -31,8 +32,14 @@ class DirectiveResolver {
         //定义当前错误行
         this.currentErrorLine = null;
 
+        this.pathInjector = new PathVariableInjector(opts.envSetting);
+
         //私有属性，外部无法访问
         this[directiveReg] = new RegExp(DIRECTIVE_BEFORE + opts.directiveName + DIRECTIVE_END, "img");
+    }
+
+    injectPath(path) {
+        return this.pathInjector.inject(path);
     }
 
     addFiles(files) {

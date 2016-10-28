@@ -17,6 +17,9 @@ var dr = new DirectiveResolver({
         tpl: ["templates"],
         js: ["scripts"]
     },
+    envSetting: {
+        env: "123"
+    },
     rules: {
         core: [
             {

@@ -113,7 +113,8 @@ function fileIterator(options, fileHandler) {
     let realFile = true;
 
     for (let i = 0, len = files.length; i < len; i++, realFile = true) {
-        let item = files[i];
+        //拿到路径，并且将路径变量处理掉
+        let item = context.injectPath(files[i]);
 
         if(!fs.existsSync(item)) {
             realFile = false;

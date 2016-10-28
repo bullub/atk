@@ -1,14 +1,21 @@
 {
   "name": "atk",
-  "version": "0.0.1",
-  "description": "TIDT的增强版，基于原TIDT开发",
+  "version": "0.0.3",
+  "description": "Based on Node JS, the extensible html directive parser can support npm and bower to manage the external library dependency. When packaging, it will pick out the files which the project depends on.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --harmony",
     "test-cov": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot",
     "test-travis": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot"
   },
-  "repository": "bullub/atk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bullub/atk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bullub/atk/issues"
+  },
+  "homepage": "https://github.com/bullub/atk#readme",
   "author": "bullub",
   "license": "MIT",
   "files": [
