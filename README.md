@@ -256,36 +256,36 @@ new atk.DirectiveResolver({
 #####methods
 
 ######parse(file)
-&#8195;&#8195;根据当前配置，对文件中的指令进行解析
-&#8195;*params:*
-&#8195;&#8195;`file` {File}  [vinly](https://github.com/gulpjs/vinyl) 实例
+&#8195;&#8195;根据当前配置，对文件中的指令进行解析  
+&#8195;*params:*  
+&#8195;&#8195;`file` {File}  [vinly](https://github.com/gulpjs/vinyl) 实例  
 
-&#8195;*return:* &#8195;{String} 解析后生成的文件内容的字符串表示
+&#8195;*return:* &#8195;{String} 解析后生成的文件内容的字符串表示     
 
 ######getFiles()
 
-&#8195;&#8195;获取当前上下文在指令执行后，新生成(比如：执行引用npm和bower管理的资源时，会将被引用的资源以及被引用的资源依赖的资源按照配置，构造成vinly实例，存放到当前上下文中)的所有文件的数组
-&#8195;*params:*
-&#8195;*return:* &#8195; {Array\<File\>} 生成的所有文件
+&#8195;&#8195;获取当前上下文在指令执行后，新生成(比如：执行引用npm和bower管理的资源时，会将被引用的资源以及被引用的资源依赖的资源按照配置，构造成vinly实例，存放到当前上下文中)的所有文件的数组  
+&#8195;*params:*  
+&#8195;*return:* &#8195; {Array\<File\>} 生成的所有文件  
 
 ######addFile(file)
 
-&#8195;&#8195;添加一个文件到当前上下文
-&#8195;*params:*
-&#8195;&#8195;`file` {File}  [vinly](https://github.com/gulpjs/vinyl) 实例
+&#8195;&#8195;添加一个文件到当前上下文  
+&#8195;*params:*  
+&#8195;&#8195;`file` {File}  [vinly](https://github.com/gulpjs/vinyl) 实例  
 
 ######addFiles(files)
 
-&#8195;&#8195;添加多个文件到当前上下文
-&#8195;*params:*
-&#8195;&#8195;`files` {Array\<File\>} [vinly](https://github.com/gulpjs/vinyl) 实例数组
+&#8195;&#8195;添加多个文件到当前上下文  
+&#8195;*params:*  
+&#8195;&#8195;`files` {Array\<File\>} [vinly](https://github.com/gulpjs/vinyl) 实例数组  
 
 ######injectPath(path)
 
-&#8195;&#8195;给字符串注入当前上下文，envSetting中定义的变量
-&#8195;*params:*
-&#8195;&#8195;`path` {String} 含有变量路径表达式的字符串
-&#8195;*return:* &#8195; {String} 将路径变量表达式替换成实际路径变量中的值之后的内容
+&#8195;&#8195;给字符串注入当前上下文，envSetting中定义的变量  
+&#8195;*params:*  
+&#8195;&#8195;`path` {String} 含有变量路径表达式的字符串  
+&#8195;*return:* &#8195; {String} 将路径变量表达式替换成实际路径变量中的值之后的内容  
 
 
 
