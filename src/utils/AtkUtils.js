@@ -9,6 +9,8 @@ const path = require("path");
 const File = require("vinyl");
 
 const CSS_URL_REG = /url\((['"])?([^'"]+)\1\)/img;
+const EMPTY_STR_REG = /^\s*$/;
+
 
 module.exports = {
     getMustConfigs,
@@ -35,6 +37,13 @@ function getMustConfigs(directiveResolver, cmdName, cmdValue) {
     let basePath = path.join(opts.cwd, opts.srcBase);
     let extName = opts.directiveExtensions[cmdName];
     let cmdValueList = cmdValue.split(";");
+
+    //清理掉空值配置
+    for(let i = cmdValueList.length - 1; i >= 0; i --) {
+        if(!cmdValueList[i] || EMPTY_STR_REG.test(cmdValueList[i])) {
+            cmdValueList.splice(i, 1);
+        }
+    }
 
     return {
         opts,
@@ -96,7 +105,7 @@ function showParseError(filePath, index, contents, directiveName, basePath, matc
     context.currentErrorLine = currentErrorLine;
 
     if(cmdFilePath) {
-        console.log(`\x1B[33mDirective \x1B[34m%s \x1B[33mparsing serious warning. \x1B[31m File not found: %s\x1B[39m`, matchedCmd, path.relative(basePath, cmdFilePath));
+        console.log(`\x1B[33mDirective \x1B[34m%s \x1B[33mparsing serious warning. File not found: \x1B[34m%s\x1B[39m`, matchedCmd, path.relative(basePath, cmdFilePath));
     } else {
         console.log(`\x1B[31mDirective \x1B[34m${matchedCmd} \x1B[31mparsing error. ${basePath}\x1B[39m`);
     }
