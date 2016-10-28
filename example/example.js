@@ -3,16 +3,12 @@
  * 日期: 16/10/26 16:14
  * 用途:
  */
-const DirectiveResolver = require("../src");
+const DirectiveResolver = require("../src").DirectiveResolver;
 const File = require("vinyl");
 
 const fs = require("fs");
 const path = require("path");
 const cwd = process.cwd();
-
-const atkRule = {
-
-};
 
 
 
@@ -39,19 +35,19 @@ var dr = new DirectiveResolver({
     }
 });
 
-// var result = dr.resolve(new File({
-//     base: path.join(cwd, "src"),
-//     cwd: cwd,
-//     path: path.join(cwd, "src/pages/index.html"),
-//     contents: fs.readFileSync(path.join(cwd, "src/pages/index.html"))
-// }));
-
 var result = dr.resolve(new File({
     base: path.join(cwd, "src"),
     cwd: cwd,
-    path: path.join(cwd, "src/pages/testRule.html"),
-    contents: fs.readFileSync(path.join(cwd, "src/pages/testRule.html"))
+    path: path.join(cwd, "src/pages/index.html"),
+    contents: fs.readFileSync(path.join(cwd, "src/pages/index.html"))
 }));
+
+// var result = dr.resolve(new File({
+//     base: path.join(cwd, "src"),
+//     cwd: cwd,
+//     path: path.join(cwd, "src/pages/testRule.html"),
+//     contents: fs.readFileSync(path.join(cwd, "src/pages/testRule.html"))
+// }));
 
 console.log(result);
 
