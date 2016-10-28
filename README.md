@@ -1,4 +1,6 @@
 # atk
+atk 是 A tool kit的简写，其实也有写一系列工具库的想法，目前仅仅实现了一个简单的伪指令分析工具。
+
 灵感来自gulp-tidt。
 
 该项目是一个基于NodeJS编写的可扩展的html伪指令解析器，主要目的是让前端开发的代码更容易维护。比如：迁移及目录结构整理等。
@@ -249,6 +251,42 @@ new atk.DirectiveResolver({
 })
 ```
 当然在实际作为项目工具的一部分时，这个变量被构造时，会动态指定。比如使用gulp，在gulpfile中，可能执行 gulp dev时候  和执行gulp stg时  这个env值是动态的，而非这样写死的
+###API
+####atk.DirectiveResolver
+#####methods
+>parse(file)
+
+根据当前配置，对文件中的指令进行解析
+params:
+file {File}  [vinly](https://github.com/gulpjs/vinyl) 实例
+return: {String} 解析后生成的文件内容的字符串表示
+
+>getFiles()
+
+获取当前上下文在指令执行后，新生成(比如：执行引用npm和bower管理的资源时，会将被引用的资源以及被引用的资源依赖的资源按照配置，构造成vinly实例，存放到当前上下文中)的所有文件的数组
+params:
+return: {Array\<File\>} 生成的所有文件
+
+>addFile(file)
+
+添加一个文件到当前上下文
+params：
+	file {File}  [vinly](https://github.com/gulpjs/vinyl) 实例
+
+>addFiles(files)
+
+添加多个文件到当前上下文
+params:
+files {Array\<File\>} [vinly](https://github.com/gulpjs/vinyl) 实例数组
+
+>injectPath(path)
+
+给字符串注入当前上下文，envSetting中定义的变量
+params:
+path {String} 含有变量路径表达式的字符串
+
+return: {String} 将路径变量表达式替换成实际路径变量中的值之后的内容
+
 
 
 
