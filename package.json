@@ -22,7 +22,7 @@
     "src"
   ],
   "devDependencies": {
-    "istanbul-harmony": "0",
+    "istanbul": "^0.4.5",
     "mocha": "^2.0.0",
     "mz": "^1.0.2"
   },

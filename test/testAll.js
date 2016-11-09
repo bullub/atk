@@ -67,6 +67,8 @@ describe("Atk test", function () {
         }));
 
 
+        // console.log(result, dr.getFiles().length);
+
         assert.equal(result, `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,20 +78,20 @@ describe("Atk test", function () {
 </head>
 <body>
 
-<script src="../scripts/aaa/aaa.js.js"></script>
+<script src="../aaa/aaa.js.js"></script>
 <script src="../assets/npm/underscore/underscore.js"></script><script src="../assets/npm/a/b.js"></script><script src="../assets/npm/c/d.js"></script>
 <link rel="stylesheet" href="../assets/npm/bootstrap/dist/css/bootstrap.css"><link rel="stylesheet" href="../assets/npm/a/b.css"><link rel="stylesheet" href="../assets/npm/c/d.css">
 <script src="../assets/bower/underscore/underscore.js"></script><script src="../assets/bower/a/b.js"></script><script src="../assets/bower/c/d.js"></script>
 <script src="../assets/bower/underscore/underscore.js"></script><script src="../assets/bower/a/b.js"></script><script src="../assets/bower/c/d.js"></script>
 <link rel="stylesheet" href="../assets/bower/xxx/xx.css"><link rel="stylesheet" href="../assets/bower/a/b.css"><link rel="stylesheet" href="../assets/bower/c/d.css">
-<script src="../scripts/abc.js"></script><script src="../scripts/ccd.js"></script>
+<script src="../abc.js"></script><script src="../ccd.js"></script>
 <!--atk aa="123" -->
 <!--atk aa="" -->
 <!--atk ="" -->
 </body>
 </html>`);
-
-        assert.equal(dr.getFiles().length, 10);
+//
+        assert.equal(dr.getFiles().length, 1);
 
     });
 });
