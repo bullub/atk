@@ -1,3 +1,5 @@
+
+
 # atk
 atk 是 A tool kit的简写，其实也有写一系列工具库的想法，目前仅仅实现了一个简单的伪指令分析工具。
 
@@ -7,7 +9,7 @@ atk 是 A tool kit的简写，其实也有写一系列工具库的想法，目�
 
 支持使用npm,bower进行项目中外部库依赖管理，打包时，会从依赖库中挑选出项目真实依赖的文件。
 
-[toc]
+![build state](https://api.travis-ci.org/bullub/atk.svg?branch=master)
 
 ##快速上手
 ###安装
@@ -93,9 +95,9 @@ node --harmony build.js
 | js      | 指定引用一个或者多个*js*文件|
 | css     | 指定引用一个或者多个*css*文件|
 | tpl     | 指定引用一个或者多个*模板*文件|
-| njss    | 指定引用一个或者多个`npm`管理的*js*文件|
+| njs    | 指定引用一个或者多个`npm`管理的*js*文件|
 | ncss    | 指定引用一个或者多个`npm`管理的*css*文件|
-| bjss    | 指定引用一个或者多个`bower`管理的*js*文件|
+| bjs    | 指定引用一个或者多个`bower`管理的*js*文件|
 | bcss    | 指定引用一个或者多个`bower`管理的*css*文件|
 | rule    | 指定引用一个或者多个*规则*|
 ##高级用法
