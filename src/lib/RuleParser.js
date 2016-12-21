@@ -66,7 +66,7 @@ function resolveRule(rule, rules, cmdName, showError) {
                     //规则必须是一个数组，规则格式不对
                     showError(`Directive parse error, rule \x1B[34m${cmd.value[j]}\x1B[31m's value must be an array, please check your rules!`)
                 } else {
-                    cmdList = cmdList.concat(resolveRule(rules[cmd.value[j]], rules, cmdName));
+                    cmdList = cmdList.concat(resolveRule(rules[cmd.value[j]], rules, cmdName, showError));
                 }
             }
 
