@@ -78,6 +78,14 @@ class DirectiveResolver {
         //返回当前根据指令解析器上下文进行解析后，返回的解析后的文件
         return file.contents.toString().replace(this[directiveReg], cmdParser.bind(this));
     }
+
+    /**
+     * 解析一个片段
+     * @param contents
+     */
+    resolveContents(contents) {
+        return contents.toString().replace(this[directiveReg], cmdParser.bind(this));
+    }
 }
 
 /**

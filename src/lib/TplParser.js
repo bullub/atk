@@ -37,9 +37,9 @@ function TplParser(matchedCmd, cmdName, cmdValue, contents, index) {
         directiveName: opts.directiveName,
         basePath,
         matchedCmd
-    }, function (path, hasFile) {
+    }, (path, hasFile) => {
         if(hasFile) {
-            replaceContents += fs.readFileSync(path);
+            replaceContents += this.resolveContents(fs.readFileSync(path));
         }
     });
 
