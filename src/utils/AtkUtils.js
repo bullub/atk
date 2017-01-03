@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 const File = require("vinyl");
 
-const CSS_URL_REG = /url\((['"])?([^'"]+)\1\)/img;
+const CSS_URL_REG = /url\((['"]?)([^'"\)]+)\1\)/img;
 const EMPTY_STR_REG = /^\s*$/;
 
 

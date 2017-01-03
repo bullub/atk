@@ -1,6 +1,6 @@
 {
   "name": "atk",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Based on Node JS, the extensible html directive parser can support npm and bower to manage the external library dependency. When packaging, it will pick out the files which the project depends on.",
   "main": "src/index.js",
   "scripts": {
