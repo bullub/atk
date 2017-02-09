@@ -151,10 +151,6 @@ new atk.DirectiveResolver({
     directiveName: "atk",
     //源码目录根目录,默认src
     srcBase: "src",
-    //在打包bower管理的依赖库时，将被引用的文件拷贝到的目标目录,默认dist/npm
-    npmDist: "dist/npm",
-    //在打包bower管理的依赖库时，将被引用的文件拷贝到的目标目录,默认dist/bower
-    bowerDist: "assets/bower",
     //配置查找不同指令文件的相对源的路径,默认无配置就是到当前制定的srcBase中去寻找
     includePaths: {
         js: ["."],
