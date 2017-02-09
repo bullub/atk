@@ -59,7 +59,7 @@ function cssParser(matchedCmd, cmdName, cmdValue, contents, index) {
 
         }
 
-        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, distFilePath)}">`;
+        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}">`;
 
     });
 
@@ -111,7 +111,7 @@ function jsParser(matchedCmd, cmdName, cmdValue, contents, index) {
             self.addFile(AtkUtils.createFile(basePath, opts.cwd, distFilePath, fs.readFileSync(scriptPath)));
         }
 
-        replaceContents += `<script src="${path.relative(fileDir, distFilePath)}"></script>`;
+        replaceContents += `<script src="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}"></script>`;
 
     });
 

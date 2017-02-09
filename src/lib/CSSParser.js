@@ -27,7 +27,7 @@ function cssParser(matchedCmd, cmdName, cmdValue, contents, index) {
         basePath,
         matchedCmd
     }, function (scriptPath) {
-        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, scriptPath)}">`;
+        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, scriptPath).replace(/\\/g, "/")}">`;
     });
 
     return replaceContents;
