@@ -13,7 +13,7 @@ function jsParser(matchedCmd, cmdName, cmdValue, contents, index) {
     let {opts, file, includePaths, fileDir, filePath, basePath, extName, cmdValueList} = AtkUtils.getMustConfigs(this, cmdName, cmdValue);
 
     //从指令中解析出包含的文件绝对路径
-    let includeScriptFiles = AtkUtils.getIncludeAbsoluteFilePaths(includePaths, cmdValueList, extName, basePath);
+    let includeScriptFiles = AtkUtils.getIncludeAbsoluteFilePaths(includePaths, cmdValueList, extName, basePath, this);
 
     let replaceContents = '';
 

@@ -64,12 +64,12 @@ function getMustConfigs(directiveResolver, cmdName, cmdValue) {
  * @param extName {String} 命令对应的文件扩展名
  * @param basePath {String} 查找根路径
  */
-function getIncludeAbsoluteFilePaths(includePaths, cmdValueList, extName, basePath) {
+function getIncludeAbsoluteFilePaths(includePaths, cmdValueList, extName, basePath, context) {
     let filePath, includeAbsolutePaths = [];
 
     for(let i = 0, len = cmdValueList.length; i < len; i ++) {
         for(var j = 0, jLen = includePaths.length; j < jLen; j ++) {
-            filePath = path.join(basePath, includePaths[j], cmdValueList[i] + extName);
+            filePath = context.pathInjector.inject(path.join(basePath, includePaths[j], cmdValueList[i] + extName));
             if(fs.existsSync(filePath)) {
                 includeAbsolutePaths.push(filePath);
                 break ;
