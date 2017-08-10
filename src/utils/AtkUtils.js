@@ -7,6 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 const File = require("vinyl");
+const crypto = require('crypto');
 
 const CSS_URL_REG = /url\((['"]?)([^'"\)]+)\1\)/img;
 const EMPTY_STR_REG = /^\s*$/;
@@ -119,7 +120,7 @@ function showParseError(filePath, index, contents, directiveName, basePath, matc
 function fileIterator(options, fileHandler) {
 
     let {context, files, filePath, index, contents, directiveName, basePath, matchedCmd} = options;
-    let realFile = true;
+    let realFile = true, fileContent =  "" + Date.now();
 
     for (let i = 0, len = files.length; i < len; i++, realFile = true) {
         //拿到路径，并且将路径变量处理掉
@@ -130,8 +131,18 @@ function fileIterator(options, fileHandler) {
             showParseError(filePath, index, contents, directiveName, basePath, matchedCmd, item, context);
         }
 
-        fileHandler(item, realFile);
+        if(realFile) {
+            fileContent = fs.readFileSync(item);
+        }
+
+        fileHandler(item, realFile, getMD5(fileContent));
     }
+}
+
+function getMD5(content, start = 16, end = 24) {
+    let md5 = crypto.createHash('md5');
+    md5.update(content);
+    return md5.digest('hex').substring(start, end);
 }
 
 /**

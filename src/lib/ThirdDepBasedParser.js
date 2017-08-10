@@ -39,7 +39,7 @@ function cssParser(matchedCmd, cmdName, cmdValue, contents, index) {
         directiveName: opts.directiveName,
         basePath,
         matchedCmd
-    }, function (cssPath, fileExists) {
+    }, function (cssPath, fileExists, hash) {
         //根据配置，生成出构建之后，文件相对当前源码路径的目标路径
         let distFilePath = getDistFilePath(cssPath, basePath, opts.cwd, COMPONENT_DIST, COMPONENT_BASE);
 
@@ -59,7 +59,7 @@ function cssParser(matchedCmd, cmdName, cmdValue, contents, index) {
 
         }
 
-        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}">`;
+        replaceContents += `<link rel="stylesheet" href="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}?_=${hash}">`;
 
     });
 
@@ -101,7 +101,7 @@ function jsParser(matchedCmd, cmdName, cmdValue, contents, index) {
         directiveName: opts.directiveName,
         basePath,
         matchedCmd
-    }, function (scriptPath, fileExists) {
+    }, function (scriptPath, fileExists, hash) {
         //根据配置，生成出构建之后，文件相对当前源码路径的目标路径
         let distFilePath = getDistFilePath(scriptPath, basePath, opts.cwd, COMPONENT_DIST, COMPONENT_BASE);
 
@@ -111,7 +111,7 @@ function jsParser(matchedCmd, cmdName, cmdValue, contents, index) {
             self.addFile(AtkUtils.createFile(basePath, opts.cwd, distFilePath, fs.readFileSync(scriptPath)));
         }
 
-        replaceContents += `<script src="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}"></script>`;
+        replaceContents += `<script src="${path.relative(fileDir, distFilePath).replace(/\\/g, "/")}?_=${hash}"></script>`;
 
     });
 

@@ -26,8 +26,8 @@ function jsParser(matchedCmd, cmdName, cmdValue, contents, index) {
         directiveName: opts.directiveName,
         basePath,
         matchedCmd
-    }, function (scriptPath) {
-        replaceContents += `<script src="${path.relative(fileDir, scriptPath).replace(/\\/g, "/")}"></script>`;
+    }, function (scriptPath, realFile, hash) {
+        replaceContents += `<script src="${path.relative(fileDir, scriptPath).replace(/\\/g, "/")}?_=${hash}"></script>`;
     });
 
     return replaceContents;
