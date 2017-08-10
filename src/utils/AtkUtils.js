@@ -120,7 +120,7 @@ function showParseError(filePath, index, contents, directiveName, basePath, matc
 function fileIterator(options, fileHandler) {
 
     let {context, files, filePath, index, contents, directiveName, basePath, matchedCmd} = options;
-    let realFile = true, fileContent =  "" + Date.now();
+    let realFile = true, fileContent =  "undefined";
 
     for (let i = 0, len = files.length; i < len; i++, realFile = true) {
         //拿到路径，并且将路径变量处理掉

@@ -67,24 +67,24 @@ describe("Atk test", function () {
         }));
 
 
-        // console.log(result, dr.getFiles().length);
+        console.log(result, dr.getFiles().length);
 
         assert.equal(result, `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../head.css"><link rel="stylesheet" href="../body.css">
+    <link rel="stylesheet" href="../head.css?_=7d30f76f"><link rel="stylesheet" href="../body.css?_=7d30f76f">
     <title>Title</title>
 </head>
 <body>
 
-<script src="../aaa/aaa.js.js"></script>
-<script src="../assets/npm/underscore/underscore.js"></script><script src="../assets/npm/a/b.js"></script><script src="../assets/npm/c/d.js"></script>
-<link rel="stylesheet" href="../assets/npm/bootstrap/dist/css/bootstrap.css"><link rel="stylesheet" href="../assets/npm/a/b.css"><link rel="stylesheet" href="../assets/npm/c/d.css">
-<script src="../assets/bower/underscore/underscore.js"></script><script src="../assets/bower/a/b.js"></script><script src="../assets/bower/c/d.js"></script>
-<script src="../assets/bower/underscore/underscore.js"></script><script src="../assets/bower/a/b.js"></script><script src="../assets/bower/c/d.js"></script>
-<link rel="stylesheet" href="../assets/bower/xxx/xx.css"><link rel="stylesheet" href="../assets/bower/a/b.css"><link rel="stylesheet" href="../assets/bower/c/d.css">
-<script src="../abc.js"></script><script src="../ccd.js"></script>
+<script src="../aaa/aaa.js.js?_=7d30f76f"></script>
+<script src="../assets/npm/underscore/underscore.js?_=7d30f76f"></script><script src="../assets/npm/a/b.js?_=7d30f76f"></script><script src="../assets/npm/c/d.js?_=7d30f76f"></script>
+<link rel="stylesheet" href="../assets/npm/bootstrap/dist/css/bootstrap.css?_=7d30f76f"><link rel="stylesheet" href="../assets/npm/a/b.css?_=7d30f76f"><link rel="stylesheet" href="../assets/npm/c/d.css?_=7d30f76f">
+<script src="../assets/bower/underscore/underscore.js?_=7d30f76f"></script><script src="../assets/bower/a/b.js?_=7d30f76f"></script><script src="../assets/bower/c/d.js?_=7d30f76f"></script>
+<script src="../assets/bower/underscore/underscore.js?_=7d30f76f"></script><script src="../assets/bower/a/b.js?_=7d30f76f"></script><script src="../assets/bower/c/d.js?_=7d30f76f"></script>
+<link rel="stylesheet" href="../assets/bower/xxx/xx.css?_=f54c22e7"><link rel="stylesheet" href="../assets/bower/a/b.css?_=f54c22e7"><link rel="stylesheet" href="../assets/bower/c/d.css?_=f54c22e7">
+<script src="../abc.js?_=7d30f76f"></script><script src="../ccd.js?_=7d30f76f"></script>
 <!--atk aa="123" -->
 <!--atk aa="" -->
 <!--atk ="" -->

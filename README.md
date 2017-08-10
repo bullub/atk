@@ -11,6 +11,8 @@ atk 是 A tool kit的简写，其实也有写一系列工具库的想法，目�
 
 ![build state](https://api.travis-ci.org/bullub/atk.svg?branch=master)
 
+[历史版本](https://github.com/bullub/atk/releases)
+
 ##快速上手
 ###安装
 ```
