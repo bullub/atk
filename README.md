@@ -108,39 +108,39 @@ node --harmony build.js
 
 ```javascript
 new atk.DirectiveResolver({
-	rules: {
-		rule1: [
-			{	//该记录表示引用了一个别的规则-->rule2
-				name: "rule",
-				value: [
-					"rule2"
-				]
-			},
-			{  //该记录表示引用了一个js，与<!--atk js="a/b/c"-->作用相同
-				name: "js",
-				value: [
-					"a/b/c",
-					...
-				]
-			}
-		],
-		rule2: [
-			{	//该记录表示引用了两个css，分别是reset.css和base.css
-				name: "css",
-				value: [
-					"reset",
-					"base"
-				]
-			},
-			{	//该条记录表示引用一个npm管理的bootstrap.css，具体路径基于node_modules目录，bower同理
-				name: "ncss",
-				value: [
-					"bootstrap/dist/css/bootstrap"
-				]
-			}
-		]
-		...
-	}
+  rules: {
+    rule1: [
+      {	//该记录表示引用了一个别的规则-->rule2
+        name: "rule",
+	value: [
+	  "rule2"
+	]
+      },
+      {  //该记录表示引用了一个js，与<!--atk js="a/b/c"-->作用相同
+        name: "js",
+	value: [
+	  "a/b/c",
+	  ...
+	]
+      }
+    ],
+    rule2: [
+      {	//该记录表示引用了两个css，分别是reset.css和base.css
+        name: "css",
+	value: [
+	  "reset",
+	  "base"
+	]
+      },
+      {	//该条记录表示引用一个npm管理的bootstrap.css，具体路径基于node_modules目录，bower同理
+        name: "ncss",
+	value: [
+	  "bootstrap/dist/css/bootstrap"
+	]
+      }
+    ]
+    ...
+  }
 })
 ```
 
