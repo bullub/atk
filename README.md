@@ -27,17 +27,17 @@ const File = require("vinyl");
 const cwd = process.cwd();
 
 let dr = new atk.DirectiveResolver({
-	includePaths: {
-		js: ["scripts", "assets/lib"],
-		tpl: ["templates"]
-	}
+  includePaths: {
+    js: ["scripts", "assets/lib"],
+    tpl: ["templates"]
+  }
 });
 
 let result = dr.parse(new File({
-    base: path.join(cwd, "src"),
-    cwd: cwd,
-    path: path.join(cwd, "src/pages/example.html"),
-    contents: fs.readFileSync(path.join(cwd, "src/pages/example.html"))
+  base: path.join(cwd, "src"),
+  cwd: cwd,
+  path: path.join(cwd, "src/pages/example.html"),
+  contents: fs.readFileSync(path.join(cwd, "src/pages/example.html"))
 });
 
 console.log(reusult);
@@ -78,7 +78,7 @@ node --harmony build.js
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <title>Title</title>
 </head>
 <body>
@@ -220,24 +220,23 @@ new atk.DirectiveResolver({
 
 ```javascript
 new atk.DirectiveResolver({
-	//修改指令解析器名称为xxx  也就是以后写指令时，atk就要改成xxx
-	directiveName: "xxx"
-	//定义自定义指令的解析器即可
-	parsers: {
-		/**
-		 * 自定义指令解析器
-		 * @param matchedCmd {String} 匹配到的指令全貌,如 <!--xxx mydirective="value"-->
-		 * @param cmdName {String} 指令名称,示例中是mydirective
-		 * @param cmdValue {String} 指令值, 示例中是value
-		 * @param contents {String} 文件内容
-		 * @param index {Number} 指令所在内容中的索引
-		 * @returns {string} 解析之后的模板内容
-		 */
-		mydirective: function(matchedCmd, cmdName, cmdValue, contents, index){
-			//这里写你的指令解析器内容，返回一个字符串，替换页面中你编写的指令占位符
-		
-		}
-	}
+  //修改指令解析器名称为xxx  也就是以后写指令时，atk就要改成xxx
+  directiveName: "xxx",
+  //定义自定义指令的解析器即可
+  parsers: {
+    /**
+     * 自定义指令解析器
+     * @param matchedCmd {String} 匹配到的指令全貌,如 <!--xxx mydirective="value"-->
+     * @param cmdName {String} 指令名称,示例中是mydirective
+     * @param cmdValue {String} 指令值, 示例中是value
+     * @param contents {String} 文件内容
+     * @param index {Number} 指令所在内容中的索引
+     * @returns {string} 解析之后的模板内容
+     */
+    mydirective: function(matchedCmd, cmdName, cmdValue, contents, index){
+      //这里写你的指令解析器内容，返回一个字符串，替换页面中你编写的指令占位符
+    }
+  }
 })
 ```
 ### 使用路径变量
@@ -245,11 +244,11 @@ new atk.DirectiveResolver({
 
 ```javascript
 new atk.DirectiveResolver({
-	//路径变量，这里的变量值可以用于覆盖路径中的{variable}值，根据环境生成路径
-	envSetting: {
-		//在指令中编写  <--atk js="configs/{env}.js"-->  执行的时候会将env替换成stg
-		env: "stg"
-	}
+  //路径变量，这里的变量值可以用于覆盖路径中的{variable}值，根据环境生成路径
+  envSetting: {
+    //在指令中编写  <--atk js="configs/{env}.js"-->  执行的时候会将env替换成stg
+    env: "stg"
+  }
 })
 ```
 当然在实际作为项目工具的一部分时，这个变量被构造时，会动态指定。比如使用gulp，在gulpfile中，可能执行 gulp dev时候  和执行gulp stg时  这个env值是动态的，而非这样写死的
